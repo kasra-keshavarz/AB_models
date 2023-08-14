@@ -9,7 +9,7 @@
 
   "met": [{
     "dataset": "RDRS",
-    "dataset_dir": "/project/rpp-kshook/Model_Output/RDRSv2.1/",
+    "dataset-dir": "/project/rpp-kshook/Model_Output/RDRSv2.1/",
     "variable": [
       "RDRS_v2.1_P_P0_SFC",
       "RDRS_v2.1_P_HU_1.5m",
@@ -19,68 +19,77 @@
       "RDRS_v2.1_P_FB_SFC",
       "RDRS_v2.1_P_FI_SFC"
     ],
-    "output_dir":"$HOME/scratch/ab_models/datatool_outputs",
-    "start_date":"1980-01-01 13:00:00",
-    "end_date":"2018-12-31 12:00:00",
-    "lat_lims": "",
-    "lon_lims": "",
-    "shapefile": "./0-geofabric/ab_catchments.shp",
+    "output-dir":"$HOME/scratch/ab_models/datatool_outputs",
+    "start-date":"1980-01-01T13:00:00",
+    "end-date":"2018-12-31T12:00:00",
+    "lat-lims": "",
+    "lon-lims": "",
+    "shape-file": "../0-geofabric/ab_catchments.shp",
+    "model": "",
     "ensemble": "",
-    "job": "true",
-    "output_prefix": "ab_models_",
-    "email": "kasra.keshavarz1@ucalgary.ca"
+    "prefix": "ab_models_",
+    "email": "kasra.keshavarz1@ucalgary.ca",
+    "_triggers": [
+      "submit-job",
+      "parsable"
+    ]
   }],
 
   "gis": [{
     "dataset": "landsat",
-    "dataset_dir": "/project/rpp-kshook/Model_Output/Landsat/",
+    "dataset-dir": "/project/rpp-kshook/Model_Output/Landsat/",
     "variable":"land-cover",
-    "start_date": "2020",
-    "end_date": "2020",
-    "output_dir":"$HOME/scratch/ab_models/gistool_outputs/landsat",
-    "lat_lims": "",
-    "lon_lims": "",
-    "shapefile": "./0-geofabric/ab_catchments.shp",
-    "job": "true",
-    "print_geotiff": "true",
+    "start-date": "2020",
+    "end-date": "2020",
+    "output-dir":"$HOME/scratch/ab_models/gistool_outputs/landsat",
+    "lat-lims": "",
+    "lon-lims": "",
+    "shape-file": "../0-geofabric/ab_catchments.shp",
+    "print-geotiff": "true",
     "stat": [
       "frac",
       "coords"
     ],
-    "include_na": "true",
+    "include-na": "true",
     "quantile": "",
     "prefix":"ab_models_",
-    "email": "kasra.keshavarz1@ucalgary.ca"
+    "email": "kasra.keshavarz1@ucalgary.ca",
+    "_triggers": [
+      "submit-job",
+      "parsable"
+    ]
   },
     
   {
     "dataset": "soil_class",
-    "dataset_dir": "/project/rpp-kshook/Model_Output/soil_classes/",
+    "dataset-dir": "/project/rpp-kshook/Model_Output/soil_classes/",
     "variable":"soil_classes",
-    "start_date": "",
-    "end_date": "",
-    "output_dir":"$HOME/scratch/ab_models/gistool_outputs/soil_classes",
-    "lat_lims": "",
-    "lon_lims": "",
-    "shapefile": "./0-geofabric/ab_catchments.shp",
-    "job": "true",
-    "print_geotiff": "true",
+    "start-date": "",
+    "end-date": "",
+    "output-dir":"$HOME/scratch/ab_models/gistool_outputs/soil_classes",
+    "lat-lims": "",
+    "lon-lims": "",
+    "shape-file": "../0-geofabric/ab_catchments.shp",
+    "print-geotiff": "true",
     "stat": [
       "major"
     ],
     "include_na": "true",
     "quantile": "",
     "prefix":"ab_models_",
-    "email": "kasra.keshavarz1@ucalgary.ca"
-  }
-  ],
+    "email": "kasra.keshavarz1@ucalgary.ca",
+    "_triggers": [
+      "submit-job",
+      "parsable"
+    ]
+  }],
 
   "easymore": [{
     "experiment":"ab_models",
     "cache": "$SLURM_TMPDIR",
-    "shapefile": "./0-geofabric/ab_catchments.shp",
-    "shapefile_id": "COMID",
-    "dataset_dir": "$HOME/scratch/datatool_outputs/landsat",
+    "shape-file": "./0-geofabric/ab_catchments.shp",
+    "shape-file-id": "COMID",
+    "dataset-dir": "$HOME/scratch/datatool_outputs/landsat",
     "variable": [
       "RDRS_v2.1_P_P0_SFC",
       "RDRS_v2.1_P_HU_1.5m",
@@ -93,10 +102,14 @@
     "lon": "lon",
     "lat": "lat",
     "time": "time",
-    "output_dir": "$HOME/scratch/ab_models/easymore_outputs/remapped/",
+    "output-dir": "$HOME/scratch/ab_models/easymore_outputs/remapped/",
     "format": "f4",
     "na_value": "-9999",
-    "skip_nc_check": "true"
+    "skip_nc_check": "true",
+    "_triggers": [
+      "submit-job",
+      "parsable"
+    ]
   }]
 
 }

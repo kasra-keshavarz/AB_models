@@ -1,4 +1,4 @@
-def parse_cli($array):
+def parse_args($array):
     array |
     to_entries | .[] |
     if (.key == "_triggers") then
@@ -13,3 +13,14 @@ def parse_cli($array):
             end
     end
     ;
+
+def count($array):
+  array | length
+  ;
+
+def select_independants($array):
+  array |
+  to_entries | .[] | 
+  select((.value == -1) or (.value == "-1")) |
+  .key
+  ;

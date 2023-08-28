@@ -20,7 +20,7 @@
       ],
       "output-dir":"/home/kasra545/scratch/ab_models/datatool_outputs",
       "start-date":"1980-01-01T13:00:00",
-      "end-date":"2018-12-31T12:00:00",
+      "end-date":"1980-12-31T12:00:00",
       "lat-lims": "",
       "lon-lims": "",
       "shape-file": "/home/kasra545/github-repos/AB_models/0-geofabric/merit-basins-AB-boundaries/ab_catchments.shp",
@@ -85,10 +85,10 @@
 
     "remap": [{
       "case-name":"ab_models",
-      "cache": "$SLURM_TMPDIR",
+      "cache": "/home/kasra545/scratch/ab_models/easymore_outputs/temp_dir/",
       "shapefile": "/home/kasra545/github-repos/AB_models/0-geofabric/merit-basins-AB-boundaries/ab_catchments.shp",
       "shapefile-id": "COMID",
-      "source-nc": "/home/kasra545/scratch/datatool_outputs/*.nc*",
+      "source-nc": "/home/kasra545/scratch/ab_models/datatool_outputs/*.nc*",
       "variable-lon": "lon",
       "variable-lat": "lat",
       "variable": [
@@ -100,6 +100,8 @@
         "RDRS_v2.1_P_FB_SFC",
         "RDRS_v2.1_P_FI_SFC"
       ],
+      "remapped-var-id": "COMID",
+      "remapped-dim-id": "COMID",
       "output-dir": "/home/kasra545/scratch/ab_models/easymore_outputs/remapped/",
       "_flags": [
         "submit-job"

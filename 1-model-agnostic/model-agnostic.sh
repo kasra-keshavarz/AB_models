@@ -4,37 +4,22 @@
 # input variables
 conf="$1"
 
+# global variables
+log="$(dirname $0)/model-agnostic.log"
+
 # Main message
 echo "$(basename $0): Model-agnostic workflow job submission to SLURM" \
     "scheduler on DRA HPC."
 
-
-#########################
-# Temporary file creation
-#########################
-## Temporary file message
-#echo "$(basename $0): Creating temporary files..."
-## the directory of the script
-#DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-#
-## the temp directory used, within $DIR
-## omit the -p parameter to create a temporal directory in the default location
-#WORK_DIR=`mktemp -d -p "$DIR"`
-#
-## check if tmp dir was created
-#if [[ ! "$WORK_DIR" || ! -d "$WORK_DIR" ]]; then
-#  echo "Could not create temp dir"
-#  exit 1
-#fi
-#
-## deletes the temp directory
-#function cleanup {      
-#  rm -rf "$WORK_DIR"
-#  echo "Deleted temp working directory $WORK_DIR"
-#}
-#
-## register the cleanup function to be called on the EXIT signal
-#trap cleanup EXIT
+# create log file
+if [[ -e $log ]]; then
+  rm $log
+fi
+# create log file
+touch "$log"
+# the header is the date the script is run
+date >> $log
+echo "$(basename $0): details are logged in $log"
 
 
 #####################################
@@ -120,7 +105,7 @@ for sec in "${indeps[@]}"; do
     # argument value
     arg=$(extract "parse_args(.args.${sec}[$idx])")
     # executing
-    `$executable $arg` > /dev/null 2>&1;
+    `$executable $arg` >> $log 2>&1;
     # relevant message
     echo "$(basename $0): Script for independant :${sec}:#${i} process" \
     	"is executed"
@@ -177,7 +162,7 @@ for iter in $(seq 1 $dep_iters); do
       csvID=$(array_to_csv ${ID[@]})
       
       # submit child jobs dependant on the parent
-      $executable $arg --dependency=$csvID > /dev/null 2>&1
+      $executable $arg --dependency=$csvID >> $log 2>&1
 
       # print child message
       echo "$(basename $0): Script for :${sec}: for the #${sub_iter}" \

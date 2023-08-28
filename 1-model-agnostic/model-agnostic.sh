@@ -105,7 +105,7 @@ for sec in "${indeps[@]}"; do
     # argument value
     arg=$(extract "parse_args(.args.${sec}[$idx])")
     # executing
-    `$executable $arg` >> $log 2>&1;
+    $executable $arg >> $log 2>&1;
     # relevant message
     echo "$(basename $0): Script for independant :${sec}:#${i} process" \
     	"is executed"

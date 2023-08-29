@@ -88,7 +88,7 @@
       "cache": "/home/kasra545/scratch/ab_models/easymore_outputs/temp_dir/",
       "shapefile": "/home/kasra545/github-repos/AB_models/0-geofabric/merit-basins-AB-boundaries/ab_catchments.shp",
       "shapefile-id": "COMID",
-      "source-nc": "/home/kasra545/scratch/ab_models/datatool_outputs/*.nc*",
+      "source-nc": "/home/kasra545/scratch/ab_models/datatool_outputs/*/*.nc*",
       "variable-lon": "lon",
       "variable-lat": "lat",
       "variable": [

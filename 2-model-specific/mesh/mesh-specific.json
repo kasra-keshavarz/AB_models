@@ -1,0 +1,26 @@
+{
+    "sbatch": {
+        "merge": "",
+        "unit_change": "",
+        "ddb": "",
+	"settings": ""
+    },
+    "exec": {
+        "merge": "/home/kasra545/github-repos/datatool/extract-dataset.sh",
+        "unit_change": "/home/kasra545/github-repos/gistool/extract-gis.sh",
+        "ddb": "python /home/kasra545/github-repos/AB_models/2-model-specific/mesh/workflow/ddb.py",
+	"settings": "python /home/kasra545/github-repos/AB_models/2-model-specific/mesh/workflow/settings.py"
+    },
+    "args":{ 
+      "merge": {},
+      "unit_change": {},
+      "ddb": {},
+      "settings": {}
+    },
+    "order": {
+        "merge": 1,
+        "unit_change": 2,
+        "ddb": -1,
+        "settings": -1
+    }
+}

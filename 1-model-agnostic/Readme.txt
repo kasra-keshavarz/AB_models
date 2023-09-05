@@ -26,6 +26,7 @@ Workflows
 
     3. easymore (version v1.0.0):
      https://github.com/ShervanGharari/EASYMORE
+     (version used: https://github.com/kasra-keshavarz/easymore/tree/wip/cli)
 
       This workflow calculates aerial average of meteorological datasets
       (in this setup, using the outputs of datatool) for computational

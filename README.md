@@ -76,7 +76,7 @@ The Pull Request used is `#1`. The commit hash used is `1f41a14`.
 # Model-agnostic
 `Agnostic` part of the modelling effort is located in the following:
 [agnostic](./1-model-agnostic). Processing, however, is summarized
-in the [orchestration](3-orchestrator) section.
+in the [orchestration](3-orchestration) section.
 
 # Model-specific
 `Specific` part of the modelling effort is located in the following:

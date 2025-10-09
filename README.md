@@ -15,6 +15,8 @@ The meteorological forcing data is sourced from the Environment
 and Climate Change Canada (ECCC) `CaSRv3.1` dataset. The dataset
 was last access on October 9, 2025 at [CaSRv3.1](https://hpfx.collab.science.gc.ca/~scar700/rcas-casr/).
 
+Hourly data from January 1, 1980 to December 31, 1984 is used.
+
 The tool used to extract subsets from the dataset for AB is
 called `datatool` and can be access at the following webpage:
 [Datatool GitHub repository](https://github.com/CH-Earth/datatool.git).
